@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Mechanical Plankton Robot -->
+  <rect x="18" y="14" width="28" height="34" rx="12" fill="#7F8C8D" stroke="#2C3E50" stroke-width="2.5"/>
+  <!-- Single Glowing Red Robot Eye -->
+  <circle cx="32" cy="28" r="9" fill="#17202A" stroke="#E74C3C" stroke-width="2"/>
+  <circle cx="32" cy="28" r="4.5" fill="#E74C3C"/>
+  <!-- Antennae -->
+  <line x1="26" y1="14" x2="18" y2="4" stroke="#2C3E50" stroke-width="2.5"/>
+  <circle cx="18" cy="4" r="2.5" fill="#F1C40F"/>
+  <line x1="38" y1="14" x2="46" y2="4" stroke="#2C3E50" stroke-width="2.5"/>
+  <circle cx="46" cy="4" r="2.5" fill="#F1C40F"/>
+  <!-- Wheels/Treads -->
+  <rect x="14" y="46" width="36" height="12" rx="4" fill="#34495E" stroke="#17202A" stroke-width="2"/>
+</svg>

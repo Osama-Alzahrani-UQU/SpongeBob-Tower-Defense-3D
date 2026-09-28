@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Swirling Matchmaking Water Portal with Lifebuoy Rings -->
+  <circle cx="64" cy="64" r="54" fill="#2980B9" fill-opacity="0.35"/>
+  <circle cx="64" cy="64" r="44" fill="#3498DB" stroke="#85C1E9" stroke-width="4" stroke-dasharray="14 6"/>
+  <circle cx="64" cy="64" r="28" fill="#1ABC9C" stroke="#A3E4D7" stroke-width="3"/>
+  <circle cx="64" cy="64" r="12" fill="#E8F8F5"/>
+  <!-- Lifebuoy Ring accents -->
+  <circle cx="28" cy="28" r="8" fill="#E74C3C" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="100" cy="100" r="8" fill="#E74C3C" stroke="#FFFFFF" stroke-width="3"/>
+</svg>

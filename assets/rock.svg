@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="80" viewBox="0 0 110 80">
+  <!-- Patrick's Rock Dome with Weather Vane -->
+  <path d="M12 70 Q55 10 98 70 Z" fill="#884EA0" stroke="#512E5F" stroke-width="3"/>
+  <line x1="55" y1="20" x2="55" y2="8" stroke="#F1C40F" stroke-width="2"/>
+  <polygon points="55,8 48,12 62,12" fill="#F1C40F"/>
+</svg>

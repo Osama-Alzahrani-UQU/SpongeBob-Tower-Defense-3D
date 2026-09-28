@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Green Leaves on Top -->
+  <path d="M64 36 Q44 4 32 16 Q52 24 58 36 Z" fill="#27AE60" stroke="#1E8449" stroke-width="2"/>
+  <path d="M64 36 Q64 2 64 2 Q76 16 68 36 Z" fill="#2ECC71" stroke="#1E8449" stroke-width="2"/>
+  <path d="M64 36 Q84 4 96 16 Q76 24 70 36 Z" fill="#27AE60" stroke="#1E8449" stroke-width="2"/>
+  <!-- Orange Pineapple Body -->
+  <ellipse cx="64" cy="76" rx="38" ry="46" fill="#E67E22" stroke="#B9770E" stroke-width="3"/>
+  <!-- Criss-cross texture -->
+  <line x1="38" y1="50" x2="90" y2="100" stroke="#B9770E" stroke-width="2"/>
+  <line x1="38" y1="100" x2="90" y2="50" stroke="#B9770E" stroke-width="2"/>
+  <line x1="30" y1="74" x2="98" y2="74" stroke="#B9770E" stroke-width="2"/>
+  <!-- Porthole Window -->
+  <circle cx="46" cy="68" r="9" fill="#85C1E9" stroke="#7F8C8D" stroke-width="3"/>
+  <circle cx="82" cy="78" r="9" fill="#85C1E9" stroke="#7F8C8D" stroke-width="3"/>
+  <!-- Chimney & Door -->
+  <rect x="56" y="96" width="16" height="26" rx="8" fill="#7F8C8D" stroke="#34495E" stroke-width="2"/>
+</svg>

@@ -1,0 +1,235 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8yj7batl001"]
+
+[ext_resource type="Script" path="res://scripts/game/battle_controller.gd" id="1_batl"]
+[ext_resource type="Script" path="res://scripts/ui/battle_hud.gd" id="2_hud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_top"]
+bg_color = Color(0.1, 0.2, 0.32, 0.9)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bottom"]
+bg_color = Color(0.12, 0.22, 0.35, 0.92)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.08, 0.16, 0.26, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.6, 0.9, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Battle" type="Node3D"]
+script = ExtResource("1_batl")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 21, 17.5)
+current = true
+fov = 52.0
+
+[node name="Path3D" type="Path3D" parent="."]
+
+[node name="Towers" type="Node3D" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("2_hud")
+
+[node name="TopBar" type="Panel" parent="HUD"]
+custom_minimum_size = Vector2(1280, 54)
+offset_right = 1280.0
+offset_bottom = 54.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_top")
+
+[node name="HBox" type="HBoxContainer" parent="HUD/TopBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="HPLabel" type="Label" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Base HP: 100/100"
+
+[node name="HPBar" type="ProgressBar" parent="HUD/TopBar/HBox"]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="CashLabel" type="Label" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.8, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "Cash: $500"
+
+[node name="WaveLabel" type="Label" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wave: 0/15"
+
+[node name="SpeedBtn" type="Button" parent="HUD/TopBar/HBox"]
+custom_minimum_size = Vector2(90, 36)
+layout_mode = 2
+size_flags_vertical = 4
+text = "1x Speed"
+
+[node name="StartWaveBtn" type="Button" parent="HUD/TopBar/HBox"]
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Start Wave"
+
+[node name="LobbyBtn" type="Button" parent="HUD/TopBar/HBox"]
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Return Lobby"
+
+[node name="BottomBar" type="Panel" parent="HUD"]
+custom_minimum_size = Vector2(1280, 84)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bottom")
+
+[node name="HBox" type="HBoxContainer" parent="HUD/BottomBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 6.0
+offset_right = -30.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="InspectorPanel" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(230, 320)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -160.0
+offset_right = -20.0
+offset_bottom = 160.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/InspectorPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="TowerName" type="Label" parent="HUD/InspectorPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "SpongeBob (Lvl 1)"
+
+[node name="TraitLabel" type="Label" parent="HUD/InspectorPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.8, 1, 1)
+text = "Trait: None"
+
+[node name="StatsLabel" type="Label" parent="HUD/InspectorPanel/VBox"]
+layout_mode = 2
+text = "DPS: 15.0
+Damage: 18.0
+SPA: 1.2s
+Range: 160"
+
+[node name="TargetModeBtn" type="Button" parent="HUD/InspectorPanel/VBox"]
+layout_mode = 2
+text = "Target: First"
+
+[node name="UpgradeBtn" type="Button" parent="HUD/InspectorPanel/VBox"]
+layout_mode = 2
+text = "Upgrade ($120)"
+
+[node name="SellBtn" type="Button" parent="HUD/InspectorPanel/VBox"]
+layout_mode = 2
+text = "Sell ($80)"
+
+[node name="CloseBtn" type="Button" parent="HUD/InspectorPanel/VBox"]
+layout_mode = 2
+text = "Close"
+
+[node name="GameOverPanel" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(400, 240)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -120.0
+offset_right = 200.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="HUD/GameOverPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "VICTORY!"
+horizontal_alignment = 1
+
+[node name="DescLabel" type="Label" parent="HUD/GameOverPanel/VBox"]
+layout_mode = 2
+text = "You cleared the wave!"
+horizontal_alignment = 1
+
+[node name="LobbyBtn" type="Button" parent="HUD/GameOverPanel/VBox"]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Lobby"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm7mainmenu001"]
+
+[ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="1_mainmenu"]
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_mainmenu")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 3.8, 8.8)
+current = true
+fov = 72.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 5

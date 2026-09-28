@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <!-- Glowing Green Spectral Aura -->
+  <circle cx="48" cy="48" r="44" fill="#2ECC71" fill-opacity="0.25"/>
+  <!-- Ghost Pirate Hat -->
+  <path d="M20 30 Q48 10 76 30 Q56 22 48 32 Q40 22 20 30 Z" fill="#145A32" stroke="#58D68D" stroke-width="2"/>
+  <circle cx="48" cy="22" r="3" fill="#F1C40F"/>
+  <!-- Ghost Face -->
+  <ellipse cx="48" cy="44" rx="22" ry="18" fill="#27AE60" stroke="#58D68D" stroke-width="2.5"/>
+  <ellipse cx="40" cy="40" rx="5" ry="6" fill="#F4D03F"/>
+  <ellipse cx="56" cy="40" rx="5" ry="6" fill="#F4D03F"/>
+  <circle cx="40" cy="40" r="2" fill="#000000"/>
+  <circle cx="56" cy="40" r="2" fill="#000000"/>
+  <!-- Braided Green Beard -->
+  <path d="M34 52 Q30 76 40 84 Q48 68 56 84 Q66 76 62 52 Z" fill="#1E8449" stroke="#58D68D" stroke-width="2"/>
+</svg>

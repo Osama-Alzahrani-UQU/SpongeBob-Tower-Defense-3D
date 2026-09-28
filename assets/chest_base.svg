@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+  <!-- Glowing Treasure Inside Top Edge -->
+  <ellipse cx="90" cy="26" rx="68" ry="18" fill="#FFF176" stroke="#FBC02D" stroke-width="3"/>
+  <circle cx="55" cy="22" r="9" fill="#FFD54F" stroke="#F57F17" stroke-width="2"/>
+  <circle cx="75" cy="18" r="10" fill="#FFEE58" stroke="#F57F17" stroke-width="2"/>
+  <circle cx="95" cy="20" r="11" fill="#FFD54F" stroke="#F57F17" stroke-width="2"/>
+  <circle cx="118" cy="19" r="9" fill="#FFF59D" stroke="#F57F17" stroke-width="2"/>
+  <polygon points="86,8 94,8 98,16 90,24 82,16" fill="#00E5FF" stroke="#00838F" stroke-width="1.5"/>
+  <polygon points="62,12 68,12 71,18 65,24 59,18" fill="#FF4081" stroke="#880E4F" stroke-width="1.5"/>
+  <!-- Wooden Chest Box -->
+  <path d="M16 28 L164 28 L154 108 L26 108 Z" fill="#6E2C00" stroke="#3E1700" stroke-width="4"/>
+  <!-- Wood Planks -->
+  <line x1="20" y1="54" x2="160" y2="54" stroke="#4A1D00" stroke-width="3"/>
+  <line x1="23" y1="80" x2="157" y2="80" stroke="#4A1D00" stroke-width="3"/>
+  <!-- Gold Side & Center Straps -->
+  <path d="M16 28 L34 28 L40 108 L26 108 Z" fill="#F1C40F" stroke="#B7950B" stroke-width="2.5"/>
+  <path d="M146 28 L164 28 L154 108 L140 108 Z" fill="#F1C40F" stroke="#B7950B" stroke-width="2.5"/>
+  <rect x="80" y="28" width="20" height="80" fill="#F1C40F" stroke="#B7950B" stroke-width="2.5"/>
+  <!-- Gold Lock Plate -->
+  <rect x="72" y="24" width="36" height="28" rx="6" fill="#FFD700" stroke="#9A7D0A" stroke-width="3"/>
+  <circle cx="90" cy="35" r="5" fill="#2C1606"/>
+  <polygon points="87,35 93,35 95,46 85,46" fill="#2C1606"/>
+</svg>

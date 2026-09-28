@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8yj7towr001"]
+
+[ext_resource type="Script" path="res://scripts/towers/tower_base.gd" id="1_towr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1"]
+radius = 8.0
+
+[node name="Tower" type="Area3D"]
+collision_layer = 1
+collision_mask = 2
+script = ExtResource("1_towr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_1")

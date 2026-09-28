@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <!-- Massive Chrome Plankton War Machine -->
+  <rect x="20" y="16" width="56" height="52" rx="18" fill="#27AE60" stroke="#145A32" stroke-width="4"/>
+  <!-- Giant Cyclops Laser Eye -->
+  <circle cx="48" cy="38" r="16" fill="#17202A" stroke="#E74C3C" stroke-width="3.5"/>
+  <circle cx="48" cy="38" r="9" fill="#FF0000"/>
+  <circle cx="48" cy="38" r="4" fill="#FFFFFF"/>
+  <!-- Plankton Horns/Antennae with Sparks -->
+  <line x1="36" y1="16" x2="22" y2="2" stroke="#145A32" stroke-width="4"/>
+  <circle cx="22" cy="2" r="5" fill="#F39C12"/>
+  <line x1="60" y1="16" x2="74" y2="2" stroke="#145A32" stroke-width="4"/>
+  <circle cx="74" cy="2" r="5" fill="#F39C12"/>
+  <!-- Heavy Armored Tank Treads -->
+  <rect x="12" y="66" width="72" height="22" rx="6" fill="#2C3E50" stroke="#17202A" stroke-width="3"/>
+  <circle cx="24" cy="77" r="6" fill="#95A5A6"/>
+  <circle cx="48" cy="77" r="6" fill="#95A5A6"/>
+  <circle cx="72" cy="77" r="6" fill="#95A5A6"/>
+</svg>

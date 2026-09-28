@@ -1,0 +1,716 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8yj7loby001"]
+
+[ext_resource type="Script" path="res://scripts/lobby/lobby_controller.gd" id="1_loby"]
+[ext_resource type="Script" path="res://scripts/ui/summon_modal.gd" id="10_summ"]
+[ext_resource type="Script" path="res://scripts/ui/inventory_modal.gd" id="11_inv"]
+[ext_resource type="Script" path="res://scripts/ui/lab_modal.gd" id="12_lab"]
+[ext_resource type="Script" path="res://scripts/ui/trading_modal.gd" id="13_trd"]
+[ext_resource type="Script" path="res://scripts/ui/settings_modal.gd" id="14_sett"]
+[ext_resource type="Script" path="res://scripts/ui/afk_modal.gd" id="15_afk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hud"]
+bg_color = Color(0.08, 0.18, 0.28, 0.92)
+border_width_bottom = 2
+border_color = Color(0.2, 0.5, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
+bg_color = Color(0.07, 0.14, 0.22, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3, 0.7, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Lobby" type="Node3D"]
+script = ExtResource("1_loby")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 15.5, 14.5)
+current = true
+fov = 55.0
+
+[node name="Landmarks3D" type="Node3D" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="TopBar" type="Panel" parent="HUD"]
+custom_minimum_size = Vector2(1280, 56)
+offset_right = 1280.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hud")
+
+[node name="HBox" type="HBoxContainer" parent="HUD/TopBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="LevelLabel" type="Label" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Lvl 15"
+
+[node name="XPBar" type="ProgressBar" parent="HUD/TopBar/HBox"]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1000.0
+value = 350.0
+show_percentage = false
+
+[node name="GoldLabel" type="Label" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.8, 0.2, 1)
+text = "Gold: 5000"
+
+[node name="GemsLabel" type="Label" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.4, 0.95, 1)
+text = "Gems: 600"
+
+[node name="DiceLabel" type="Label" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.9, 0.5, 1)
+text = "Trait Dice: 12"
+
+[node name="VSeparator" type="VSeparator" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+
+[node name="InvBtn" type="Button" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Inventory"
+
+[node name="SummonBtn" type="Button" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Summon"
+
+[node name="LabBtn" type="Button" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Lab"
+
+[node name="TradeBtn" type="Button" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Trade"
+
+[node name="SettingsBtn" type="Button" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Codes / Settings"
+
+[node name="BattleBtn" type="Button" parent="HUD/TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "PLAY BATTLE"
+
+[node name="SummonModal" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(700, 460)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -230.0
+offset_right = 350.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+script = ExtResource("10_summ")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/SummonModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="HUD/SummonModal/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 22
+text = "GRAND SUMMON ALTAR"
+horizontal_alignment = 1
+
+[node name="PityLabel" type="Label" parent="HUD/SummonModal/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.8, 1, 1)
+text = "Featured Mythic Pity: 0 / 50"
+horizontal_alignment = 1
+
+[node name="ResultScroll" type="ScrollContainer" parent="HUD/SummonModal/VBox"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="ResultContainer" type="HBoxContainer" parent="HUD/SummonModal/VBox/ResultScroll"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BtnHBox" type="HBoxContainer" parent="HUD/SummonModal/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="SingleBtn" type="Button" parent="HUD/SummonModal/VBox/BtnHBox"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+text = "1x Summon (50 Gems)"
+
+[node name="MultiBtn" type="Button" parent="HUD/SummonModal/VBox/BtnHBox"]
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+text = "10x Summon (450 Gems)"
+
+[node name="CloseBtn" type="Button" parent="HUD/SummonModal/VBox"]
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[node name="InventoryModal" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(920, 560)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -280.0
+offset_right = 460.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+script = ExtResource("11_inv")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/InventoryModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = -18.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="HUD/InventoryModal/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "INVENTORY & BATTLE LOADOUT"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="HUD/InventoryModal/VBox"]
+custom_minimum_size = Vector2(0, 268)
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="HUD/InventoryModal/VBox/Scroll"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="DetailPanel" type="Panel" parent="HUD/InventoryModal/VBox"]
+custom_minimum_size = Vector2(0, 146)
+layout_mode = 2
+
+[node name="DetailHBox" type="HBoxContainer" parent="HUD/InventoryModal/VBox/DetailPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_constants/separation = 12
+
+[node name="PortraitBox" type="VBoxContainer" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox"]
+custom_minimum_size = Vector2(86, 126)
+layout_mode = 2
+alignment = 1
+
+[node name="PortraitFrame" type="PanelContainer" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/PortraitBox"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+
+[node name="PortraitTexture" type="TextureRect" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/PortraitBox/PortraitFrame"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PortraitLvl" type="Label" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/PortraitBox"]
+layout_mode = 2
+horizontal_alignment = 1
+text = "Lv.1"
+
+[node name="EquipmentsBox" type="VBoxContainer" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox"]
+custom_minimum_size = Vector2(260, 126)
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 4
+
+[node name="EquipmentsTitle" type="Label" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/EquipmentsBox"]
+layout_mode = 2
+horizontal_alignment = 1
+text = "⚔️ EQUIPMENTS (5 Slots)"
+
+[node name="EquipmentsSlots" type="HBoxContainer" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/EquipmentsBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 6
+
+[node name="InfoVBox" type="VBoxContainer" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="UnitName" type="Label" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/InfoVBox"]
+layout_mode = 2
+text = "Unit Name"
+
+[node name="Stats" type="Label" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/InfoVBox"]
+layout_mode = 2
+text = "DPS: 0 | Damage: 0 | SPA: 0s | Range: 0"
+
+[node name="Trait" type="Label" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/InfoVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.8, 1, 1)
+text = "Trait: None"
+
+[node name="HBox" type="HBoxContainer" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/InfoVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="EquipBtn" type="Button" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/InfoVBox/HBox"]
+custom_minimum_size = Vector2(130, 30)
+layout_mode = 2
+text = "Equip"
+
+[node name="FeedBtn" type="Button" parent="HUD/InventoryModal/VBox/DetailPanel/DetailHBox/InfoVBox/HBox"]
+custom_minimum_size = Vector2(165, 30)
+layout_mode = 2
+text = "Feed Duplicates"
+
+[node name="CloseBtn" type="Button" parent="HUD/InventoryModal/VBox"]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[node name="LabModal" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(600, 380)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -190.0
+offset_right = 300.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+script = ExtResource("12_lab")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/LabModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="HUD/LabModal/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.9, 0.5, 1)
+theme_override_font_sizes/font_size = 20
+text = "PLANKTON'S TRAIT LABORATORY"
+horizontal_alignment = 1
+
+[node name="DiceCountLbl" type="Label" parent="HUD/LabModal/VBox"]
+layout_mode = 2
+text = "Available Trait Dice: 12"
+horizontal_alignment = 1
+
+[node name="UnitOption" type="OptionButton" parent="HUD/LabModal/VBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+
+[node name="CurrentTraitLbl" type="Label" parent="HUD/LabModal/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Current Trait: None"
+
+[node name="TraitDescLbl" type="Label" parent="HUD/LabModal/VBox"]
+layout_mode = 2
+text = "Effect: Standard unit stats."
+autowrap_mode = 3
+
+[node name="RerollBtn" type="Button" parent="HUD/LabModal/VBox"]
+custom_minimum_size = Vector2(220, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "REROLL TRAIT (1 Die)"
+
+[node name="CloseBtn" type="Button" parent="HUD/LabModal/VBox"]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[node name="TradeModal" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(680, 420)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -210.0
+offset_right = 340.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+script = ExtResource("13_trd")
+
+[node name="CloseBtn" type="Button" parent="HUD/TradeModal"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "X"
+
+[node name="LockGateLabel" type="Label" parent="HUD/TradeModal"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 18
+text = "LEVEL 15 REQUIRED TO TRADE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TradeContent" type="VBoxContainer" parent="HUD/TradeModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="HUD/TradeModal/TradeContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 20
+text = "FLYING DUTCHMAN SPECTRAL TRADING"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="HUD/TradeModal/TradeContent"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MyPanel" type="VBoxContainer" parent="HUD/TradeModal/TradeContent/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HUD/TradeModal/TradeContent/HBox/MyPanel"]
+layout_mode = 2
+text = "Your Offer"
+
+[node name="MyList" type="ItemList" parent="HUD/TradeModal/TradeContent/HBox/MyPanel"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="PartnerPanel" type="VBoxContainer" parent="HUD/TradeModal/TradeContent/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HUD/TradeModal/TradeContent/HBox/PartnerPanel"]
+layout_mode = 2
+text = "Dutchman's Bounty"
+
+[node name="PartnerList" type="ItemList" parent="HUD/TradeModal/TradeContent/HBox/PartnerPanel"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="StatusLbl" type="Label" parent="HUD/TradeModal/TradeContent"]
+layout_mode = 2
+text = "Select units to trade."
+horizontal_alignment = 1
+
+[node name="ActionHBox" type="HBoxContainer" parent="HUD/TradeModal/TradeContent"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LockBtn" type="Button" parent="HUD/TradeModal/TradeContent/ActionHBox"]
+custom_minimum_size = Vector2(130, 36)
+layout_mode = 2
+text = "Lock In Offer"
+
+[node name="ConfirmBtn" type="Button" parent="HUD/TradeModal/TradeContent/ActionHBox"]
+custom_minimum_size = Vector2(130, 36)
+layout_mode = 2
+disabled = true
+text = "Accept Trade"
+
+[node name="SettingsModal" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(580, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -200.0
+offset_right = 290.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+script = ExtResource("14_sett")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/SettingsModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="HUD/SettingsModal/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SETTINGS & PROMO CODES"
+horizontal_alignment = 1
+
+[node name="SettingsHBox" type="VBoxContainer" parent="HUD/SettingsModal/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LagCheck" type="CheckBox" parent="HUD/SettingsModal/VBox/SettingsHBox"]
+layout_mode = 2
+text = "Lag Reducer Mode (Optimized 60 FPS)"
+
+[node name="SFXLabel" type="Label" parent="HUD/SettingsModal/VBox/SettingsHBox"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="HUD/SettingsModal/VBox/SettingsHBox"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="HUD/SettingsModal/VBox/SettingsHBox"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="HUD/SettingsModal/VBox/SettingsHBox"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="HSeparator" type="HSeparator" parent="HUD/SettingsModal/VBox"]
+layout_mode = 2
+
+[node name="CodesBox" type="VBoxContainer" parent="HUD/SettingsModal/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="LockMsg" type="Label" parent="HUD/SettingsModal/VBox/CodesBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.3, 0.3, 1)
+text = "Codes locked until Level 10"
+
+[node name="HBox" type="HBoxContainer" parent="HUD/SettingsModal/VBox/CodesBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CodeInput" type="LineEdit" parent="HUD/SettingsModal/VBox/CodesBox/HBox"]
+custom_minimum_size = Vector2(280, 36)
+layout_mode = 2
+placeholder_text = "Enter Promo Code (e.g. BIKINIBOTTOM)"
+
+[node name="RedeemBtn" type="Button" parent="HUD/SettingsModal/VBox/CodesBox/HBox"]
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 2
+text = "Redeem"
+
+[node name="StatusLbl" type="Label" parent="HUD/SettingsModal/VBox/CodesBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.9, 0.4, 1)
+
+[node name="CloseBtn" type="Button" parent="HUD/SettingsModal/VBox"]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[node name="AFKModal" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(440, 260)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -130.0
+offset_right = 220.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+script = ExtResource("15_afk")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/AFKModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Title" type="Label" parent="HUD/AFKModal/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "AFK CHAMBER RESORT"
+horizontal_alignment = 1
+
+[node name="GoldAccumLbl" type="Label" parent="HUD/AFKModal/VBox"]
+layout_mode = 2
+text = "Accumulated Gold: +0"
+horizontal_alignment = 1
+
+[node name="GemsAccumLbl" type="Label" parent="HUD/AFKModal/VBox"]
+layout_mode = 2
+text = "Accumulated Gems: +0"
+horizontal_alignment = 1
+
+[node name="ClaimBtn" type="Button" parent="HUD/AFKModal/VBox"]
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Claim Rewards"
+
+[node name="CloseBtn" type="Button" parent="HUD/AFKModal/VBox"]
+custom_minimum_size = Vector2(90, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[node name="LeaderboardModal" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(500, 320)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -160.0
+offset_right = 250.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/LeaderboardModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="HUD/LeaderboardModal/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "GLOBAL LEADERBOARDS (INFINITE MODE)"
+horizontal_alignment = 1
+
+[node name="Scores" type="Label" parent="HUD/LeaderboardModal/VBox"]
+layout_mode = 2
+text = "#1 SpongeMaster - Wave 142 (Mythic Flying Dutchman)
+#2 JellyHunter99 - Wave 118 (Secret Formula Patrick)
+#3 KrustyChef - Wave 105 (Surge III Sandy)
+#4 BikiniDefender - Wave 94 (Wealth Krabs)
+#5 YOU - Wave 86 (Unstoppable Goober)"
+
+[node name="CloseBtn" type="Button" parent="HUD/LeaderboardModal/VBox"]
+custom_minimum_size = Vector2(90, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"

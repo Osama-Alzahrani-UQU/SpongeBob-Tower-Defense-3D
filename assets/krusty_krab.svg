@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="110" viewBox="0 0 140 110">
+  <!-- Wooden Lobster Trap Shape -->
+  <path d="M14 96 L24 44 Q70 20 116 44 L126 96 Z" fill="#B9770E" stroke="#6E2C00" stroke-width="3"/>
+  <!-- Roof Beams -->
+  <path d="M28 44 Q70 24 112 44" stroke="#6E2C00" stroke-width="3" fill="none"/>
+  <!-- Glass Window Panels -->
+  <rect x="36" y="52" width="28" height="34" fill="#A9CCE3" stroke="#2980B9" stroke-width="2"/>
+  <rect x="76" y="52" width="28" height="34" fill="#A9CCE3" stroke="#2980B9" stroke-width="2"/>
+  <!-- Clam Sign on top -->
+  <circle cx="70" cy="20" r="14" fill="#F4D03F" stroke="#D4AC0D" stroke-width="2"/>
+  <text x="70" y="24" font-size="10" font-family="Arial" font-weight="bold" text-anchor="middle" fill="#7D6608">KK</text>
+</svg>

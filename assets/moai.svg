@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="128" viewBox="0 0 110 128">
+  <!-- Squidward Moai Face House -->
+  <rect x="25" y="24" width="60" height="96" rx="8" fill="#5D6D7E" stroke="#2C3E50" stroke-width="3"/>
+  <!-- Brow & Eyes -->
+  <rect x="20" y="38" width="70" height="10" rx="3" fill="#34495E"/>
+  <circle cx="38" cy="56" r="8" fill="#85C1E9" stroke="#1B4F72" stroke-width="2.5"/>
+  <circle cx="72" cy="56" r="8" fill="#85C1E9" stroke="#1B4F72" stroke-width="2.5"/>
+  <!-- Big Straight Nose -->
+  <rect x="49" y="50" width="12" height="34" fill="#34495E"/>
+  <!-- Door -->
+  <rect x="44" y="98" width="22" height="22" rx="4" fill="#17202A"/>
+</svg>

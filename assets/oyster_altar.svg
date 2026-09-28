@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Glowing Grand Summon Platform with Giant Oyster -->
+  <circle cx="64" cy="64" r="58" fill="#FAD7A0" fill-opacity="0.3" stroke="#F39C12" stroke-width="3"/>
+  <!-- Bottom Shell -->
+  <path d="M24 74 Q64 104 104 74 Q64 88 24 74 Z" fill="#E8DAEF" stroke="#8E44AD" stroke-width="2.5"/>
+  <!-- Open Top Shell -->
+  <path d="M26 68 Q64 20 102 68 Q64 54 26 68 Z" fill="#D2B4DE" stroke="#8E44AD" stroke-width="2.5"/>
+  <!-- Radiant Pearl inside -->
+  <circle cx="64" cy="66" r="14" fill="#FFFFFF" stroke="#F4D03F" stroke-width="2.5"/>
+  <circle cx="60" cy="62" r="4" fill="#FCF3CF"/>
+</svg>

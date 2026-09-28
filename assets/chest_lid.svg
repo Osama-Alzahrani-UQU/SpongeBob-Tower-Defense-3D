@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="180" height="76" viewBox="0 0 180 76">
+  <!-- Curved Wooden Dome Lid -->
+  <path d="M14 68 Q18 10 90 10 Q162 10 166 68 Z" fill="#873600" stroke="#3E1700" stroke-width="4"/>
+  <!-- Gold Trim Rim -->
+  <rect x="12" y="60" width="156" height="12" rx="4" fill="#F1C40F" stroke="#9A7D0A" stroke-width="3"/>
+  <!-- Gold Arched Bands -->
+  <path d="M26 64 Q30 18 46 16 L58 16 Q44 22 40 64 Z" fill="#F1C40F" stroke="#B7950B" stroke-width="2"/>
+  <path d="M154 64 Q150 18 134 16 L122 16 Q136 22 140 64 Z" fill="#F1C40F" stroke="#B7950B" stroke-width="2"/>
+  <rect x="80" y="10" width="20" height="54" rx="3" fill="#F1C40F" stroke="#B7950B" stroke-width="2"/>
+  <!-- Pearl Clasp Emblem -->
+  <circle cx="90" cy="58" r="11" fill="#00FFAA" stroke="#00897B" stroke-width="2.5"/>
+  <circle cx="87" cy="55" r="3.5" fill="#FFFFFF"/>
+</svg>
