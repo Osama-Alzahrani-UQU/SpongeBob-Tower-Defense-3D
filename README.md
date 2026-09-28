@@ -11,7 +11,31 @@
 - **Project Creator, Lead Developer & Sole Owner:** **Osama Alzahrani** ([`@Osama-Alzahrani-UQU`](https://github.com/Osama-Alzahrani-UQU))
 - **Official GitHub Profile:** [https://github.com/Osama-Alzahrani-UQU](https://github.com/Osama-Alzahrani-UQU)
 - **Copyright:** © 2026 **Osama-Alzahrani-UQU**. All Rights & Ownership Reserved.
-- **In-Game Verification:** Accessible directly via the **👑 CREDITS** button in the Main Menu and 3D Lobby TopBar.
+- **In-Game Verification:** Accessible directly via the **👑 CREDITS (Osama-Alzahrani-UQU)** button in the Main Menu and 3D Lobby TopBar.
+
+---
+
+## 📸 Live In-Game 3D Screenshots
+
+### 🌊 1. 3D Main Menu Vista & Official Ownership Credits
+| **3D Main Menu & SpongeBob Vista** | **Official In-Game Credits (`Osama-Alzahrani-UQU`)** |
+| :---: | :---: |
+| ![3D Main Menu](./screenshots/01_main_menu.png) | ![Official Credits Modal](./screenshots/02_credits_ownership.png) |
+
+### 🏙️ 2. Walkable 3D Bikini Bottom Open Hub & Tactical 3D Battle
+| **3D Bikini Bottom Open Hub (`Lobby`)** | **Active 3D Battle, Range Dome & Wave Controls** |
+| :---: | :---: |
+| ![3D Bikini Bottom Hub](./screenshots/03_3d_lobby_hub.png) | ![3D Battle Gameplay](./screenshots/08_3d_battle_gameplay.png) |
+
+### 🐚 3. Summon Shop (24 Characters & Auto-Sell) & 50-Unit Inventory (Lock/Unlock)
+| **Grand Oyster Summon Shop & Character Index** | **Units Inventory (50 Max, Equipments & Unit Lock)** |
+| :---: | :---: |
+| ![Summon Shop](./screenshots/04_summon_shop.png) | ![Units Inventory](./screenshots/05_units_inventory.png) |
+
+### 🧪 4. Plankton's Trait Lab (0.5% Neptune's Crown) & Infinity Waves Mode
+| **Plankton's Trait Laboratory & Mutation Odds** | **Patrick's Rock — Infinity Waves Expedition** |
+| :---: | :---: |
+| ![Trait Lab & Odds](./screenshots/06_trait_lab_odds.png) | ![Infinity Waves Mode](./screenshots/07_infinity_waves_select.png) |
 
 ---
 
@@ -42,7 +66,7 @@
 
 5. **Tactical Combat & Wave Systems**
    - Real-time placement validation preventing road/unit overlap with dynamic green/crimson `RangeDome3D` shader feedback.
-   - Penultimate enemy 10-second wave countdown with `⏩ Skip Now` and `⏳ Wait 10s` controls.
+   - Penultimate enemy 10-second wave countdown with `⏩ Skip Now` and `⏳ Wait +10s` controls.
    - Overhead 3D enemy ability badges (`⚡ SPEED`, `🛡️ TANK`, `👑 BOSS`, `💨 SCOUT`).
 
 6. **Summon Shop, Auto-Sell, Inventory Capacity & Unit Lock**
